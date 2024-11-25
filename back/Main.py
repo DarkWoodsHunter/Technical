@@ -1,15 +1,15 @@
 from fastapi import FastAPI
-import models
-from database import engine
 
-from database import engine
+from Database import database
+
 from Router import routerUser, routerProyect, auth
 
+from ModelsSchemas import models
 
 
 app = FastAPI()
 
-models.Base.metadata.create_all(engine)
+models.Base.metadata.create_all(database.engine)
 
 app.include_router(routerUser.router)
 app.include_router(routerProyect.router)

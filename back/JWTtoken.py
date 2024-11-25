@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
 from jose import JWTError, jwt
-import schemas
+from ModelsSchemas import schemas
 
 SECRET_KEY = "1CROW3eyes"
 ALGORITHM = "HS256"
