@@ -1,0 +1,7 @@
+apifast
+uvicorn
+python-jose
+passlib
+pymysql
+sqlalchemy
+brcrypt
