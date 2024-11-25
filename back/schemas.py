@@ -7,14 +7,7 @@ class UserBase(BaseModel):
     subscribed: bool
     role: str
     
-class ShowUser(BaseModel):
-    username: str
-    subscribed: bool
-    role: str
-    Proyect: List[ProyectBase] = []
-    
-    class Config():
-        orm_mode = True
+
     
 class ProyectBase(BaseModel):
     
@@ -23,7 +16,24 @@ class ProyectBase(BaseModel):
     
     class Config():
         orm_mode = True
+        
+class smalluser(BaseModel):
+    username: str
+    subcribed: int
+    role:str
     
+    class Config():
+        orm_mode = True
+
+class ShowUser(BaseModel):
+    username: str
+    subscribed: bool
+    role: str
+    proyect: List[ProyectBase] = []
+    
+    class Config():
+        orm_mode = True   
+         
 class ShowProyect(BaseModel):
     name: str
     progress: int
@@ -31,3 +41,14 @@ class ShowProyect(BaseModel):
     
     class Config():
         orm_mode = True
+        
+class Login(BaseModel):
+    username: str
+    password: str
+    
+class Token(BaseModel):
+    access_toekn: str
+    token_type: str
+    
+class TokenData(BaseModel):
+    username: Optional[str] = None

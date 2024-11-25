@@ -3,7 +3,7 @@ import models
 from database import engine
 
 from database import engine
-from Router import routerUser, routerProyect
+from Router import routerUser, routerProyect, auth
 
 
 
@@ -13,6 +13,7 @@ models.Base.metadata.create_all(engine)
 
 app.include_router(routerUser.router)
 app.include_router(routerProyect.router)
+app.include_router(auth.router)
 
 '''
 ################################################################################

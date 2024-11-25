@@ -11,7 +11,7 @@ class Users(Base):
     subscribed = Column(Boolean, default=False)
     role = Column(String, default="regular")
     
-    Proyect = relationship("Proyects", back_populates="involved")
+    proyect = relationship("Proyects", back_populates="involved")
     
     
 class Proyects(Base):
@@ -22,5 +22,5 @@ class Proyects(Base):
     progress = Column(Integer, default=0)
     user_id = Column(Integer, ForeignKey('users.id'))
     
-    involved = relationship("Users", back_populates="Proyect")
+    involved = relationship("Users", back_populates="proyect")
     
